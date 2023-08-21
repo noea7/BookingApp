@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import jwtDecode from "jwt-decode";
+import Navigation from "./components/Navigation";
+import CreateReservationPage from "./pages/CreateReservation";
+import ViewReservationPage from "./pages/ViewReservation";
+
+const apiUrl = "http://localhost:3000/api/v1";
 
 function App() {
+  const token = localStorage.getItem("jwtToken");
+  let specialistId = "";
+
+  if (token) {
+    const decodedToken = jwtDecode(token);
+    specialistId = decodedToken.specialistId;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navigation />
+        <div className="container-xxl">
+          <Routes>
+            <Route path="/create" element={<CreateReservationPage />} />
+            <Route path="/view" element={<ViewReservationPage />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+export { apiUrl };
