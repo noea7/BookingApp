@@ -1,6 +1,6 @@
 const logout = () => {
   localStorage.removeItem("jwtToken");
-  window.location.reload();
+  window.location.href = "/";
 };
 
 export default logout;

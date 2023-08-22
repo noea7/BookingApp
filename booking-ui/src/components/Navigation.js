@@ -25,16 +25,41 @@ function Navigation() {
               id="navbarSupportedContent"
             >
               <div className="navbar-nav me-auto mb-2 mb-lg-0">
-                <div className="nav-item">
-                  <Link to="/create" className="nav-link">
-                    Reserve
-                  </Link>
-                </div>
-                <div className="nav-item">
-                  <Link to="/view" className="nav-link">
-                    Check reservation
-                  </Link>
-                </div>
+                {!token && (
+                  <div className="nav-item">
+                    <Link to="/create" className="nav-link">
+                      Reserve
+                    </Link>
+                  </div>
+                )}
+                {!token && (
+                  <div className="nav-item">
+                    <Link to="/view" className="nav-link">
+                      Check reservation
+                    </Link>
+                  </div>
+                )}
+                {!token && (
+                  <div className="nav-item">
+                    <Link to="/login" className="nav-link">
+                      Login
+                    </Link>
+                  </div>
+                )}
+                {token && (
+                  <div className="nav-item">
+                    <Link to="/department" className="nav-link">
+                      Service department
+                    </Link>
+                  </div>
+                )}
+                {token && (
+                  <div className="nav-item">
+                    <Link to="/list" className="nav-link">
+                      My reservations
+                    </Link>
+                  </div>
+                )}
                 {token && (
                   <div className="nav-item">
                     <button className="nav-link" onClick={logout}>
