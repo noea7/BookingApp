@@ -100,8 +100,8 @@ class VisitControllerTest {
     @Test
     @WithMockUser
     void shouldStartAndEndVisitWithCorrectTestData() throws Exception {
-        String testEmail = "test@gmail.com";
-        String testSpecialistId = "1";
+        String testEmail = "test2@gmail.com";
+        String testSpecialistId = "2";
         MvcResult createResult = performBookingPost(testSpecialistId, testEmail);
         Visit visit = objectMapper.readValue(createResult.getResponse().getContentAsString(),
                 new TypeReference<Visit>() {});
