@@ -2,9 +2,9 @@
 Appointment booking application. Assignment for NFQ
 
 ### Running the App
-- Open parking-api with IntellijIdea or an IDE of your choice and donwload maven dependencies
-- Run ParkingApiApplication
-- Open parking-ui with vsCode or similar editor.
+- Open booking-api with IntellijIdea or an IDE of your choice and donwload maven dependencies
+- Run BookingApiApplication
+- Open booking-ui with vsCode or similar editor.
 - Run npm install
 - Run npm start
 - Log in to access service department screen and visit management for specialists. Credentials ghouse/house, jwilson/wilson, mgrey/grey, cyang/yang, akarev/karev for different specialists
